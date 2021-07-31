@@ -1,0 +1,25 @@
+.search-form{
+display: block;
+margin: 0px -28px 10px 10px;
+}
+
+h1, h3, .temperature{
+    color: #006EC5;
+}
+
+.high-low-temp{
+    color: #919A9C;
+}
+.current-temperature{
+font-size: 50px;
+}
+
+.temp-measurements{
+position: relative;
+top: -24px;
+padding-left: 5px;
+}
+
+li {
+    list-style-type: none;
+}
