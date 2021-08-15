@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css"; 
-import { mixedTypeAnnotation } from "@babel/types";
 
 export default function Weather(props){
     const [weatherData, setWeatherData] = useState ({ready : false});
