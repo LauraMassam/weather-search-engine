@@ -1,25 +1,33 @@
+.Weather{
+    background-color: aquamarine;
+}
+
 .search-form{
 display: block;
 margin: 0px -28px 10px 10px;
+}
+
+h6{
+   color: #6FBBF8; 
 }
 
 h1, h3, .temperature{
     color: #006EC5;
 }
 
-.high-low-temp{
+.high-low-temp, .weather-details{
     color: #919A9C;
 }
 .current-temperature{
 font-size: 50px;
 }
 
+.temperature{
+    text-align: center;
+}
+
 .temp-measurements{
 position: relative;
 top: -24px;
 padding-left: 5px;
-}
-
-li {
-    list-style-type: none;
 }
