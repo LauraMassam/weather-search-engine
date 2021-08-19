@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
+import FormattedDay from "./FormattedDay";
+import FormattedTime from "./FormattedTime";
 import "./Weather.css"; 
 
 export default function Weather(props){
@@ -9,14 +11,14 @@ export default function Weather(props){
         setWeatherData ({
             ready : true,
             city: response.data.name,
-            date: "Saturday 15:38",
+            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             feelsLike: Math.round(response.data.main.feels_like),
             humidity: Math.round(response.data.main.humidity),
             iconUrl: "https://openweathermap.org/img/wn/02d@2x.png",
             temperature: Math.round(response.data.main.temp),
-            sunrise: response.data.sys.sunrise,
-            sunset: response.data.sys.sunset,
+            sunrise: new Date (response.data.sys.sunrise * 1000),
+            sunset: new Date (response.data.sys.sunset * 1000),
             tempMax: Math.round(response.data.main.temp_max),
             tempMin: Math.round(response.data.main.temp_min),
             wind: Math.round(response.data.wind.speed),
@@ -43,7 +45,8 @@ export default function Weather(props){
         </div>
         <div className="col-4">
             <h3>
-                 {weatherData.date}
+                 < FormattedDay date = {weatherData.date} />
+                 < FormattedTime date = {weatherData.date} />
             </h3>
         </div>
 
@@ -71,7 +74,7 @@ export default function Weather(props){
                     </div>
                     <div className = "feels-like">
 
-                    feels like : {weatherData.feelsLike}
+                    feels like : {weatherData.feelsLike}°
                     </div>
             </div>
 
@@ -83,10 +86,12 @@ export default function Weather(props){
                         Wind: {weatherData.wind}km/h
                 </div>
                 <div className="col">
-                        sunrise: {weatherData.sunrise}
+                        sunrise: 
+                        < FormattedTime date = {weatherData.sunrise} />
                 </div>
                 <div className="col">
-                sunset: {weatherData.sunset}
+                        sunset: 
+                        < FormattedTime date = {weatherData.sunset} />
                 </div>
             </div>
 
