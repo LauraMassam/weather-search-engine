@@ -1,7 +1,7 @@
 import React from "react";
 import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
-
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props){
     return(
@@ -21,10 +21,10 @@ export default function WeatherInfo(props){
 
         <div className="row">
             <div className="col-6">
-            <img src = {props.data.iconUrl}
-                 alt = {props.data.description}
-                 style = {{width: 150}}
-            />
+                <WeatherIcon 
+                code = {props.data.icon}
+                alt = {props.data.description}
+                />
             </div>
             <div className="col-6 temperature">
                 <span className = "current-temperature">
@@ -45,7 +45,6 @@ export default function WeatherInfo(props){
                     feels like : {props.data.feelsLike}°
                 </div>
             </div>
-
 
             <div className="row weather-details">
                 <div className="col">
