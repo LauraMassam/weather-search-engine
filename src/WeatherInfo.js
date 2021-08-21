@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props){
     console.log(props.data)
@@ -16,8 +17,12 @@ export default function WeatherInfo(props){
         </div> 
         <div className="col-4 current-date">
             <h3>
+                <div className = "row current-day">
                  < FormattedDay date = {props.data.date} />
+                </div>
+                <div className = "row current-time">
                  < FormattedTime date = {props.data.date} />
+                 </div>
             </h3>
         </div>
     </div>
@@ -28,30 +33,19 @@ export default function WeatherInfo(props){
                 code = {props.data.icon}
                 alt = {props.data.description}
                 />
-            <div className="row description">
+            <div className="row currentWeatherDescription">
                     <strong>
                     {props.data.description}
                     </strong>
             </div>
             </div>
             <div className="col-6 temperature">
-                <span className = "current-temperature">
-                    {props.data.temperature}
-                </span>
-                <span className = "temp-measurements">
-                    °C | F 
-                </span>             
-                    
-                <div className = "high-low-temp">
-                    {props.data.tempMin}° | {""}
-                        <strong>
-                            {props.data.tempMax}
-                            </strong>
-                            °
-                </div>
-                <div className = "feels-like">
-                    feels like : {props.data.feelsLike}°
-                </div>
+                <WeatherTemperature 
+                celsius={props.data.temperature}
+                feelsLike={props.data.feelsLike}
+                tempMin={props.data.tempMin}
+                tempMax={props.data.tempMax}
+                />
             </div>
         </div>
 
@@ -64,11 +58,11 @@ export default function WeatherInfo(props){
                     Wind: {props.data.wind}km/h
                 </div>
                 <div className="col sunrise">
-                    sunrise: {""}
+                    Sunrise: {""}
                     < FormattedTime date = {props.data.sunrise} />
                 </div>
                 <div className="col sunset">
-                    sunset: {""}
+                    Sunset: {""}
                     < FormattedTime date = {props.data.sunset} />
                 </div>
             </div>

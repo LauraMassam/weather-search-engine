@@ -11,7 +11,7 @@ export default function FormattedTime(props){
         }
     
     return ( 
-        <span>
+        <span className = "currentTime">
         {hours}:{minutes}
         </span>
     );    

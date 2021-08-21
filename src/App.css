@@ -1,6 +1,6 @@
 .App {
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 600px;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -15,7 +15,7 @@ padding: 10px;
 }
 
 footer{
-  font-size: 10px;
+  font-size: 12px;
   padding-top: 2px;
   text-align: center;
 }
