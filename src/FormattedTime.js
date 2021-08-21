@@ -11,8 +11,8 @@ export default function FormattedTime(props){
         }
     
     return ( 
-        <div>
+        <span>
         {hours}:{minutes}
-        </div>
+        </span>
     );    
     }

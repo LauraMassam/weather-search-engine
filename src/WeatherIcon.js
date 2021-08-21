@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactSkycon, SkyconType } from 'react-skycons-extended' ;
+import { ReactSkycon } from 'react-skycons-extended' ;
 
 export default function WeatherIcon(props){
     const codeMapping = {
@@ -39,14 +39,9 @@ export default function WeatherIcon(props){
             snow: "#d3d3d3",
             fog:"#bcb8b8"
           }}
-          size={150}
+          size={120}
           animate={true}
         />
       </div>
         );
 }
-
-// PARTS: 
-// sun, moon, light_cloud, cloud, dark_cloud, rain, snow, thunder, wind, leaf, hail ,sleet, fog
-
-// 

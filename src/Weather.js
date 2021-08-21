@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import WeatherIcon from "./WeatherIcon";
 import "./Weather.css"; 
 
 export default function Weather(props){
@@ -46,7 +45,7 @@ export default function Weather(props){
 <div>
     <form onSubmit={handleSubmit}>
     <div className="row search-bar">
-    <div className = "col-9 search box">
+    <div className = "col-10 search box">
         <input 
         className="form-control"
         type = "text" 
@@ -56,12 +55,13 @@ export default function Weather(props){
         />
         </div>
 
-        <div className="col-3 search-btn">
-        <input 
-        className="btn btn-primary"
-        type = "submit" 
-        placeholder ="Search"
-        />
+        <div className="col-2 search-btn">
+        <button 
+        className="city-search-button"
+        type= "submit"
+        >
+        Search
+        </button>
         </div>
     </div>
     </form>
