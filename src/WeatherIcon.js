@@ -38,7 +38,7 @@ export default function WeatherIcon(props){
             sun: "#ffd27f",
             thunder: "#FFD27F"
           }}
-          size={120}
+          size={props.size}
           animate={true}
         />
       </div>
