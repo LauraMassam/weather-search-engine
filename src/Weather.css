@@ -67,8 +67,9 @@ font-size: 50px;
     color: #006EC5;
     font-size: 16PX;
     position: relative;
-    top: -24px;
+    top: -22px;
     padding-left: 5px;
+    font-size: 20px;
 }
 
 .highTemp, .lowTemp{
