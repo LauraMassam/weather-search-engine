@@ -15,12 +15,18 @@ export default function WeatherForecast(props){
         return(
         <div className = "WeatherForecast">
             <div className ="row">
-                <div className = "col">
-                    <WeatherForecastDay data={forecast[0]} />
-                </div>
+                {forecast.map(function(dailyForecast, index){
+                    if (index < 5){
+                        return(
+                        <div className = "col">
+                            <WeatherForecastDay data={dailyForecast} />
+                        </div>
+                        );
+                    }
+                })}
             </div>
         </div>
-        )
+        );
     } else {
         let apiKey ="9aaa9a2a183bbe9e6cb58bc031908f93";
         let latitude = props.coordinates.lat;

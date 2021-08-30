@@ -25,12 +25,12 @@ export default function WeatherForecastDay(props){
             {day()}
         </div>
         <WeatherIcon code = {props.data.weather[0].icon} 
-                     size = {80} />
+                     size = {50} />
         <span className = "WeatherForecast-temperatureMax">
             {maxTemperature()}
         </span>
         <span className = "WeatherForecast-temperatureDivider">
-            |
+            {""} | {""}
         </span>
         <span className = "WeatherForecast-temperatureMin">
             {minTemperature()}
