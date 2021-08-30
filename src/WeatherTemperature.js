@@ -8,7 +8,7 @@ export default function WeatherTemperature(props){
                 {Math.round(props.celsius)}
                 </span>
                 <span className="tempMeasurements">
-                    ° C {""}
+                    °C {""}
                 </span>
 
             <div className="highAndLowTemp">

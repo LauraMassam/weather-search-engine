@@ -33,40 +33,44 @@ export default function WeatherInfo(props){
                 alt = {props.data.description}
                 size = {130}
                 />
-            <div className="row currentWeatherDescription">
+            <div className="currentWeatherDescription">
                     <strong>
                     {props.data.description}
                     </strong>
             </div>
             </div>
-            <div className="col-6 temperature">
+
+            <div className="col-6 temperature-details">
+                <div className="temperature">
                 <WeatherTemperature 
                 celsius={props.data.temperature}
-                feelsLike={props.data.feelsLike}
                 tempMin={props.data.tempMin}
                 tempMax={props.data.tempMax}
+                feelsLike={props.data.feelsLike}
                 />
+                </div>
+            
+                <div className="weather-details">
+                <div className = "humidity-and-wind">
+                <span className="humidity">
+                    Humidity: {props.data.humidity}% 
+                </span>
+                <span className="wind">
+                    Wind: {props.data.wind}km/h
+                </span>
+                </div>
+
+                <div className = "sunrise-and-sunset">
+                <span className="sunrise">
+                    Sunrise: {""} < FormattedTime date = {props.data.sunrise} /> 
+                </span>
+                <span className ="sunset">
+                    {""} Sunset: {""}  < FormattedTime date = {props.data.sunset} />
+                </span>
+                </div>
+            </div>
             </div>
         </div>
-
-    <div className="row">
-            <div className="row weather-details">
-                <div className="col humidity">
-                    Humidity: {props.data.humidity}% 
-                </div>
-                <div className="col wind">
-                    Wind: {props.data.wind}km/h
-                </div>
-                <div className="col sunrise">
-                    Sunrise: {""}
-                    < FormattedTime date = {props.data.sunrise} />
-                </div>
-                <div className="col sunset">
-                    Sunset: {""}
-                    < FormattedTime date = {props.data.sunset} />
-                </div>
-            </div>
-    </div>
 </div>
     );
 }
